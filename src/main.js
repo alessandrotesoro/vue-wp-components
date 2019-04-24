@@ -1,8 +1,16 @@
-import Vue from 'vue'
-import App from './App.vue'
+import WPButton from './components/wp-button'
 
-Vue.config.productionTip = false
+const components = {
+	WPButton,
+}
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+components.install = (Vue, options = {}) => {
+	for (const componentName in components) {
+		const component = components[componentName]
+		if (component && componentName !== 'install') {
+			Vue.component(component.name, component)
+		}
+	}
+}
+
+export default components

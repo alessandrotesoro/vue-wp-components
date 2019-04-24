@@ -1,12 +1,18 @@
 /* eslint-disable react/react-in-jsx-scope, react/no-this-in-sfc */
 
-import { storiesOf } from '@storybook/vue';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
+import {
+	storiesOf
+} from '@storybook/vue';
+import {
+	action
+} from '@storybook/addon-actions';
+import {
+	linkTo
+} from '@storybook/addon-links';
 
-import MyButton from './MyButton';
-import Welcome from './Welcome';
+import WPButton from '../src/components/wp-button';
 
+/*
 storiesOf('Welcome', module).add('to Storybook', () => ({
   components: { Welcome },
   template: '<welcome :showApp="action" />',
@@ -31,6 +37,17 @@ storiesOf('Button', module)
     components: { MyButton },
     template: '<my-button @click="action">😀 😎 👍 💯</my-button>',
     methods: { action: action('clicked') },
-  }));
+  }));*/
+
+storiesOf('Button', module)
+	.add('with text', () => ({
+		components: {
+			WPButton
+		},
+		template: '<div class="wp-admin wp-core-ui admin-color-fresh"><WPButton @click="action">Hello Button</WPButton></div>',
+		methods: {
+			action: action('clicked')
+		},
+	}));
 
 /* eslint-enable react/react-in-jsx-scope */
