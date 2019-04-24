@@ -2,6 +2,8 @@ import WPButton from './components/wp-button'
 import WPSpinner from './components/wp-spinner'
 import WPNotice from './components/wp-spinner'
 import WPMetabox from './components/wp-metabox'
+import WPModal from './components/wp-modal'
+
 import {
 	WPTabs,
 	WPTabItem
@@ -14,6 +16,7 @@ const components = {
 	WPMetabox,
 	WPTabItem,
 	WPTabs,
+	WPModal,
 }
 
 components.install = (Vue, options = {}) => {
