@@ -44,7 +44,7 @@ storiesOf('Button', module)
 		components: {
 			WPButton
 		},
-		template: '<div class="wp-admin wp-core-ui admin-color-fresh"><WPButton @click="action">Hello Button</WPButton></div>',
+		template: '<WPButton @click="action">Hello Button</WPButton>',
 		methods: {
 			action: action('clicked')
 		},

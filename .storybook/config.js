@@ -8,6 +8,7 @@ const req = require.context('../stories', true, /\.stories\.js$/);
 
 function loadStories() {
 	req.keys().forEach(filename => req(filename));
+	document.body.className += ' ' + 'wp-admin wp-core-ui admin-color-fresh'
 }
 
 configure(loadStories, module);
