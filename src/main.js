@@ -1,9 +1,11 @@
 import WPButton from './components/wp-button'
 import WPSpinner from './components/wp-spinner'
+import WPNotice from './components/wp-spinner'
 
 const components = {
 	WPButton,
 	WPSpinner,
+	WPNotice,
 }
 
 components.install = (Vue, options = {}) => {
