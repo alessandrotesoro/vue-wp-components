@@ -25,9 +25,7 @@ storiesOf('Modal', module)
 			<WPButton @click="isModalActive = true">Open modal</WPButton>
 
 			<WPModal :active.sync="isModalActive">
-				<p class="image is-4by3">
-					<img src="https://via.placeholder.com/550">
-				</p>
+				test modal content
 			</WPModal>
 
 		</div>

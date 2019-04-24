@@ -3,9 +3,49 @@
 		<div v-if="isActive" class="modal is-active">
 			<div class="modal-background" @click="cancel('outside')" />
 			<div class="animation-content" :class="{ 'modal-content': !hasModalCard }" :style="{ maxWidth: newWidth }">
-				<component v-if="component" v-bind="props" v-on="events" :is="component" @close="close" />
-				<div v-else-if="content" v-html="content" />
-				<slot v-else/>
+
+				<div tabindex="0" class="media-modal wp-core-ui">
+					<button type="button" class="media-modal-close">
+						<span class="media-modal-icon"><span class="screen-reader-text">Close media panel</span></span>
+					</button>
+					<div class="media-modal-content">
+						<div class="media-frame mode-select wp-core-ui hide-menu" id="__wp-uploader-id-0">
+							<div class="media-frame-menu">
+								<div class="media-menu"><a href="#" class="media-menu-item active">Featured Image</a></div>
+							</div>
+							<div class="media-frame-title">
+								<h1>Featured Image<span class="dashicons dashicons-arrow-down"></span></h1></div>
+							<div class="media-frame-router">
+								<div class="media-router"><a href="#" class="media-menu-item">Upload Files</a><a href="#" class="media-menu-item active">Media Library</a></div>
+							</div>
+							<div class="media-frame-content" data-columns="4">
+
+								<component v-if="component" v-bind="props" v-on="events" :is="component" @close="close" />
+								<div v-else-if="content" v-html="content" />
+								<slot v-else/>
+
+							</div>
+							<div class="media-frame-toolbar">
+								<div class="media-toolbar">
+									<div class="media-toolbar-secondary"></div>
+									<div class="media-toolbar-primary search-form">
+										<button type="button" class="button media-button button-primary button-large media-button-select" disabled="disabled">Set featured image</button>
+									</div>
+								</div>
+							</div>
+							<div class="media-frame-uploader">
+								<div class="uploader-window">
+									<div class="uploader-window-content">
+										<h1>Drop files to upload</h1>
+									</div>
+								</div>
+							</div>
+							<div id="html5_1d98bdoa6rvb1f72tdm1baft5_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: hidden; z-index: 0;">
+								<input id="html5_1d98bdoa6rvb1f72tdm1baft5" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="">
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<button type="button" v-if="showX" class="modal-close is-large" @click="cancel('x')" />
 		</div>
