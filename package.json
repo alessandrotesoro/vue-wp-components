@@ -1,7 +1,20 @@
 {
   "name": "vue-wp-components",
+  "description": "A Vue.js UI Toolkit that integrates with the WordPress dashboard to build admin pages. ",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "author": {
+    "name": "Alessandro Tesoro",
+    "email": "hello@sematico.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alessandrotesoro/vue-wp-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alessandrotesoro/vue-wp-components/issues"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
