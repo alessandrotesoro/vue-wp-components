@@ -1,11 +1,13 @@
 import WPButton from './components/wp-button'
 import WPSpinner from './components/wp-spinner'
 import WPNotice from './components/wp-spinner'
+import WPMetabox from './components/wp-metabox'
 
 const components = {
 	WPButton,
 	WPSpinner,
 	WPNotice,
+	WPMetabox,
 }
 
 components.install = (Vue, options = {}) => {
