@@ -2,52 +2,44 @@
   	<transition :name="animation">
 		<div v-if="isActive" class="modal is-active">
 			<div class="modal-background" @click="cancel('outside')" />
-			<div class="animation-content" :class="{ 'modal-content': !hasModalCard }" :style="{ maxWidth: newWidth }">
+			<div class="animation-content" :class="{ 'modal-content': !hasModalCard }" :style="{ width: newWidth }">
 
 				<div tabindex="0" class="media-modal wp-core-ui">
-					<button type="button" class="media-modal-close">
-						<span class="media-modal-icon"><span class="screen-reader-text">Close media panel</span></span>
+					<button type="button" class="media-modal-close" @click="cancel('x')">
+						<span class="media-modal-icon"><span class="screen-reader-text">Close panel</span></span>
 					</button>
 					<div class="media-modal-content">
-						<div class="media-frame mode-select wp-core-ui hide-menu" id="__wp-uploader-id-0">
-							<div class="media-frame-menu">
-								<div class="media-menu"><a href="#" class="media-menu-item active">Featured Image</a></div>
-							</div>
+						<div class="media-frame mode-select wp-core-ui hide-menu">
+
 							<div class="media-frame-title">
-								<h1>Featured Image<span class="dashicons dashicons-arrow-down"></span></h1></div>
-							<div class="media-frame-router">
-								<div class="media-router"><a href="#" class="media-menu-item">Upload Files</a><a href="#" class="media-menu-item active">Media Library</a></div>
+								<h1>{{title}} <span class="dashicons dashicons-arrow-down"></span></h1>
 							</div>
-							<div class="media-frame-content" data-columns="4">
 
-								<component v-if="component" v-bind="props" v-on="events" :is="component" @close="close" />
-								<div v-else-if="content" v-html="content" />
-								<slot v-else/>
+							<div class="media-frame-content">
+
+								<div class="modal-content-container">
+									<component v-if="component" v-bind="props" v-on="events" :is="component" @close="close" />
+									<div v-else-if="content" v-html="content" />
+									<slot v-else/>
+								</div>
 
 							</div>
-							<div class="media-frame-toolbar">
+
+							<div class="media-frame-toolbar" v-if="$slots['modal-footer-left'] || $slots['modal-footer-right']">
 								<div class="media-toolbar">
-									<div class="media-toolbar-secondary"></div>
-									<div class="media-toolbar-primary search-form">
-										<button type="button" class="button media-button button-primary button-large media-button-select" disabled="disabled">Set featured image</button>
+									<div class="media-toolbar-secondary" v-if="$slots['modal-footer-left']">
+										<slot name="modal-footer-left"></slot>
+									</div>
+									<div class="media-toolbar-primary search-form" v-if="$slots['modal-footer-right']">
+										<slot name="modal-footer-right"></slot>
 									</div>
 								</div>
 							</div>
-							<div class="media-frame-uploader">
-								<div class="uploader-window">
-									<div class="uploader-window-content">
-										<h1>Drop files to upload</h1>
-									</div>
-								</div>
-							</div>
-							<div id="html5_1d98bdoa6rvb1f72tdm1baft5_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: hidden; z-index: 0;">
-								<input id="html5_1d98bdoa6rvb1f72tdm1baft5" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept="">
-							</div>
+
 						</div>
 					</div>
 				</div>
 			</div>
-			<button type="button" v-if="showX" class="modal-close is-large" @click="cancel('x')" />
 		</div>
 	</transition>
 </template>
@@ -61,7 +53,8 @@ import config from "../../utils/config";
 export default {
     name: "wp-modal",
     props: {
-        active: Boolean,
+		active: Boolean,
+		title: String,
         component: [Object, Function],
         content: String,
         programmatic: Boolean,
@@ -242,6 +235,31 @@ export default {
 	&.is-active {
 		display: flex;
 	}
+
+	.media-modal {
+		position: relative;
+		top:initial;
+		left:initial;
+		right: initial;
+		bottom: initial;
+	}
+
+	.media-modal-content {
+		position: relative;
+		top:initial;
+		left: initial;
+		right: initial;
+		bottom: initial;
+	}
+
+	.media-frame-content {
+		top: 50px;
+	}
+
+	.modal-content-container {
+		padding: 20px 16px;
+	}
+
 }
 
 .modal-background {
