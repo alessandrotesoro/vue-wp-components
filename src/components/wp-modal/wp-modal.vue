@@ -268,7 +268,7 @@ export default {
 	position: absolute;
 	right: 0;
 	top: 0;
-	background-color: rgba(10,10,10,.86);
+	background-color: rgba(0,0,0,.7);
 }
 
 .modal-card,
