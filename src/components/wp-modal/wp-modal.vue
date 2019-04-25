@@ -2,7 +2,7 @@
   	<transition :name="animation">
 		<div v-if="isActive" class="modal is-active">
 			<div class="modal-background" @click="cancel('outside')" />
-			<div class="animation-content" :class="{ 'modal-content': !hasModalCard }" :style="{ width: newWidth }">
+			<div class="animation-content" :style="{ width: newWidth }">
 
 				<div tabindex="0" class="media-modal wp-core-ui">
 					<button type="button" class="media-modal-close" @click="cancel('x')">
@@ -64,7 +64,6 @@ export default {
             type: [String, Number],
             default: 960
         },
-        hasModalCard: Boolean,
         animation: {
             type: String,
             default: "zoom-out"
