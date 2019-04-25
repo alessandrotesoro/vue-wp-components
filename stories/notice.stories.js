@@ -9,31 +9,41 @@ import {
 
 import WPNotice from '../src/components/wp-notice';
 
+import readme from '../src/components/wp-notice/readme.md';
+
 storiesOf('Notice', module)
 	.add('Success notice', () => ({
 		components: {
 			WPNotice
 		},
 		template: '<WPNotice>Success message goes here</WPNotice>',
-	}))
+	}), {
+		notes: readme
+	})
 	.add('Info notice', () => ({
 		components: {
 			WPNotice
 		},
 		template: '<WPNotice type="info">Info message goes here</WPNotice>',
-	}))
+	}), {
+		notes: readme
+	})
 	.add('Warning notice', () => ({
 		components: {
 			WPNotice
 		},
 		template: '<WPNotice type="warning">Warning message goes here</WPNotice>',
-	}))
+	}), {
+		notes: readme
+	})
 	.add('Error notice', () => ({
 		components: {
 			WPNotice
 		},
 		template: '<WPNotice type="error">Warning message goes here</WPNotice>',
-	}))
+	}), {
+		notes: readme
+	})
 	.add('Alternative Style', () => ({
 		components: {
 			WPNotice
@@ -45,7 +55,9 @@ storiesOf('Notice', module)
 			<WPNotice type="warning" alternative>Message goes here</WPNotice>
 			<WPNotice type="error" alternative>Message goes here</WPNotice>
 		</div>`,
-	}))
+	}), {
+		notes: readme
+	})
 	.add('Dismissible notice', () => ({
 		components: {
 			WPNotice
@@ -54,6 +66,8 @@ storiesOf('Notice', module)
 		methods: {
 			action: action('Notice dismissed')
 		},
-	}));
+	}), {
+		notes: readme
+	});
 
 /* eslint-enable react/react-in-jsx-scope */
