@@ -278,7 +278,8 @@ export default {
     position: relative;
 	margin: 0 auto;
     max-height: calc(100vh - 40px);
-    width: 640px;
+	width: 640px;
+	box-shadow: 0 5px 15px rgba(0,0,0,.7);
 }
 
 .modal-close {
