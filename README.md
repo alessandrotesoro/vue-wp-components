@@ -1,7 +1,7 @@
 # Vue WordPress Components
 [![Netlify Status](https://api.netlify.com/api/v1/badges/69ba79ad-05f8-4e72-b531-3d400b29cb7d/deploy-status)](https://app.netlify.com/sites/vue-wordpress-components/deploys)
 
-Vue WordPress components is a simple, lightweight Vue.js UI Toolkit that integrates with the WordPress dashboard to build admin pages. 
+Vue WordPress components is a simple, lightweight Vue.js UI Toolkit that integrates with the WordPress dashboard to build admin pages.
 
 This is an opinionanted set of components that I use in the majority of my WordPress projects, therefore it made sense to merge the components into a library.
 
@@ -10,6 +10,8 @@ This is an opinionanted set of components that I use in the majority of my WordP
 Install Vue WordPress Components through npm or yarn
 
 ```
+npm i vue-wp-components
+yarn add vue-wp-components
 ```
 
 Import or require Vue and Vue WordPress components in your code:
