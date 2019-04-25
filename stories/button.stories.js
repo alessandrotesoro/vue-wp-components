@@ -8,6 +8,7 @@ import {
 } from '@storybook/addon-actions';
 
 import WPButton from '../src/components/wp-button';
+import readme from '../src/components/wp-button/readme.md'
 
 storiesOf('Button', module)
 	.add('Primary button', () => ({
@@ -15,25 +16,33 @@ storiesOf('Button', module)
 			WPButton
 		},
 		template: '<WPButton type="primary">Primary Button</WPButton>',
-	}))
+	}), {
+		notes: readme,
+	})
 	.add('Secondary button', () => ({
 		components: {
 			WPButton
 		},
 		template: '<WPButton>Secondary Button</WPButton>',
-	}))
+	}), {
+		notes: readme,
+	})
 	.add('Hero secondary button', () => ({
 		components: {
 			WPButton
 		},
 		template: '<WPButton hero>Hero secondary button</WPButton>',
-	}))
+	}), {
+		notes: readme,
+	})
 	.add('Hero primary button', () => ({
 		components: {
 			WPButton
 		},
 		template: '<WPButton hero type="primary">Hero primary button</WPButton>',
-	}))
+	}), {
+		notes: readme,
+	})
 	.add('Click event', () => ({
 		components: {
 			WPButton
@@ -42,6 +51,8 @@ storiesOf('Button', module)
 		methods: {
 			action: action('clicked')
 		},
-	}));
+	}), {
+		notes: readme,
+	});
 
 /* eslint-enable react/react-in-jsx-scope */
