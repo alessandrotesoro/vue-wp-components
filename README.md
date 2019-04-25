@@ -1,5 +1,8 @@
 # Vue WordPress Components
 [![Netlify Status](https://api.netlify.com/api/v1/badges/69ba79ad-05f8-4e72-b531-3d400b29cb7d/deploy-status)](https://app.netlify.com/sites/vue-wordpress-components/deploys)
+![NPM](https://img.shields.io/npm/l/vue-wp-components.svg)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/alessandrotesoro/vue-wp-components.svg)
+
 
 Vue WordPress components is a simple, lightweight Vue.js UI Toolkit that integrates with the WordPress dashboard to build admin pages.
 
