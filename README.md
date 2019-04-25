@@ -26,6 +26,8 @@ Vue.use(VueWPComponents)
 
 [https://vue-wordpress-components.netlify.com/](https://vue-wordpress-components.netlify.com/)
 
+Documentation can be found under the "Notes" tab of each component.
+
 ## Development setup
 
 ##### Install dependencies
