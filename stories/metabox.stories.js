@@ -9,6 +9,8 @@ import {
 
 import WPMetabox from '../src/components/wp-metabox';
 
+import readme from '../src/components/wp-metabox/readme.md'
+
 storiesOf('Metaboxes', module)
 	.add('Expanded metabox', () => ({
 		components: {
@@ -20,7 +22,9 @@ storiesOf('Metaboxes', module)
 					<p>Content of the metabox goes here.</p>
 				</WPMetabox>
 			</div>`,
-	}))
+	}), {
+		notes: readme
+	})
 	.add('Toggle metabox', () => ({
 		components: {
 			WPMetabox
@@ -34,7 +38,9 @@ storiesOf('Metaboxes', module)
 		methods: {
 			action: action('Metabox toggled')
 		},
-	}))
+	}), {
+		notes: readme
+	})
 	.add('Footer slot', () => ({
 		components: {
 			WPMetabox
@@ -52,6 +58,8 @@ storiesOf('Metaboxes', module)
 		methods: {
 			action: action('Metabox toggled')
 		},
-	}));
+	}), {
+		notes: readme
+	});
 
 /* eslint-enable react/react-in-jsx-scope */

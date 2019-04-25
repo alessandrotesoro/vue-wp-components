@@ -18,7 +18,22 @@ The classic button, in sizes, and states.
 ### Trigger an action
 
 ```js
-<wp-button @click="doSomething()">Button label</wp-button>
+<template>
+    <section>
+        <wp-button @click="clickMe()">Click Me</wp-button>
+    </section>
+</template>
+
+<script>
+    export default {
+        methods: {
+            clickMe() {
+                console.log('doing something')
+            }
+        }
+    }
+</script>
+
 ```
 
 
