@@ -10,6 +10,8 @@ import {
 import WPModal from '../src/components/wp-modal';
 import WPButton from '../src/components/wp-button';
 
+import readme from '../src/components/wp-modal/readme.md'
+
 storiesOf('Modal', module)
 	.add('Simple modal', () => ({
 		components: {
@@ -36,7 +38,9 @@ storiesOf('Modal', module)
 		methods: {
 			action: action('Modal closed')
 		},
-	}))
+	}), {
+		notes: readme
+	})
 	.add('Footer button', () => ({
 		components: {
 			WPButton,
@@ -66,7 +70,9 @@ storiesOf('Modal', module)
 		methods: {
 			action: action('clicked')
 		},
-	}))
+	}), {
+		notes: readme
+	})
 	.add( 'Footer with 2 buttons', () => ({
 		components: {
 			WPButton,
@@ -100,6 +106,8 @@ storiesOf('Modal', module)
 			action: action('Primary button clicked'),
 			action2: action('Secondary button clicked')
 		},
-	}));
+	}), {
+		notes: readme
+	});
 
 /* eslint-enable react/react-in-jsx-scope */
