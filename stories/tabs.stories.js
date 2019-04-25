@@ -12,6 +12,8 @@ import {
 	WPTabItem
 } from '../src/components/wp-tabs'
 
+import readme from '../src/components/wp-tabs/readme.md'
+
 storiesOf('Tabs', module)
 	.add('Tabs example', () => ({
 		components: {
@@ -31,7 +33,9 @@ storiesOf('Tabs', module)
 			</WPTabs>
 		</div>
 		`,
-	}))
+	}), {
+		notes: readme
+	})
 	;
 
 /* eslint-enable react/react-in-jsx-scope */
