@@ -12,11 +12,17 @@ import WPAside from './components/wp-aside'
 import WPRow from './components/wp-row'
 import WPCol from './components/wp-col'
 import WPPagination from './components/wp-pagination'
+import WPCheckbox from './components/wp-checkbox'
 
 import {
 	WPTabs,
 	WPTabItem
 } from './components/wp-tabs'
+
+import {
+	WPTable,
+	WPTableColumn
+} from './components/wp-table'
 
 import { use, registerComponent, registerComponentProgrammatic } from './utils/plugins'
 
@@ -35,7 +41,10 @@ const components = {
 	WPAside,
 	WPRow,
 	WPCol,
-	WPPagination
+	WPPagination,
+	WPTable,
+	WPTableColumn,
+	WPCheckbox,
 }
 
 components.install = (Vue, options = {}) => {
