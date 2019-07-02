@@ -920,7 +920,7 @@ export default {
                     td {
                         display: flex;
                         width: auto;
-                        justify-content: end;
+                        justify-content: flex-end;
                         text-align: right;
                         border-bottom: 1px solid #eee;
                         &:before {
