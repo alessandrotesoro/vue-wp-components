@@ -80,8 +80,15 @@
                                 v-if="showDetailRowIcon"
                                 class="chevron-cell"
                             >
+
+								<a
+                                    v-if="hasDetailedVisible(row) && isActiveDetailRow(row)"
+                                    role="button"
+                                    @click.stop="toggleDetails(row)">
+									<span class="dashicons dashicons-arrow-down"></span>
+                                </a>
                                 <a
-                                    v-if="hasDetailedVisible(row)"
+                                    v-else-if="hasDetailedVisible(row)"
                                     role="button"
                                     @click.stop="toggleDetails(row)">
 									<span class="dashicons dashicons-arrow-right"></span>
@@ -847,6 +854,12 @@ export default {
 		.is-sortable {
 			color: #0073aa;
 			cursor: pointer;
+		}
+
+		.chevron-cell {
+			a {
+				cursor: pointer;
+			}
 		}
 	}
 </style>
