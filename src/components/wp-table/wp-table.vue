@@ -44,7 +44,8 @@
                                 />
                                 <template v-else>{{ column.label }}</template>
 
-								<span v-show="currentSortColumn === column" class="dashicons dashicons-arrow-up"></span>
+								<span v-if="isAsc && currentSortColumn === column" class="dashicons dashicons-arrow-up"></span>
+								<span v-else-if="! isAsc && currentSortColumn === column" class="dashicons dashicons-arrow-down"></span>
 
                             </div>
                         </th>
@@ -215,7 +216,7 @@ export default {
     name: 'wp-table',
     components: {
         'wp-checkbox': Checkbox,
-        Pagination,
+        'wp-pagination': Pagination,
 		'wp-table-column': TableColumn,
 		'wp-spinner': Spinner,
     },
@@ -841,6 +842,11 @@ export default {
 				margin: 0;
 				padding: 0;
 			}
+		}
+
+		.is-sortable {
+			color: #0073aa;
+			cursor: pointer;
 		}
 	}
 </style>

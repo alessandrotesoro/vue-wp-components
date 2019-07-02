@@ -27,7 +27,11 @@ storiesOf('Table', module)
                     { 'id': 4, 'first_name': 'Clarence', 'last_name': 'Flores', 'date': '2016-04-10 10:28:46', 'gender': 'Male' },
                     { 'id': 5, 'first_name': 'Anne', 'last_name': 'Lee', 'date': '2016-12-06 14:38:38', 'gender': 'Female' }
 				],
-				checkedRows: [],
+				isPaginated: true,
+                isPaginationSimple: false,
+                defaultSortDirection: 'asc',
+                currentPage: 1,
+                perPage: 5,
                 columns: [
                     {
                         field: 'id',
@@ -58,7 +62,28 @@ storiesOf('Table', module)
 		template:
 		`
 		<div style="padding:50px;">
-			<WPTable :data="data" :columns="columns" :checked-rows.sync="checkedRows" checkable></WPTable>
+			<WPTable :data="data" :paginated="isPaginated"
+            :per-page="perPage"
+            :current-page.sync="currentPage"
+            :pagination-simple="isPaginationSimple"
+            :default-sort-direction="defaultSortDirection"
+            default-sort="user.first_name"
+            aria-next-label="Next page"
+            aria-previous-label="Previous page"
+            aria-page-label="Page"
+			aria-current-label="Current page">
+
+				<template slot-scope="props">
+					<WPTableColumn field="id" label="ID" width="40" sortable numeric>
+						{{ props.row.id }}
+					</WPTableColumn>
+
+					<WPTableColumn field="first_name" label="First Name" sortable>
+						{{ props.row.first_name }}
+					</WPTableColumn>
+				</template>
+
+			</WPTable>
 		</div>
 		`,
 	}))
