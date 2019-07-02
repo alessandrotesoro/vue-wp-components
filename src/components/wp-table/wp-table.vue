@@ -11,7 +11,7 @@
                 <thead v-if="newColumns.length">
                     <tr>
                         <th v-if="showDetailRowIcon" width="40px"/>
-                        <th class="checkbox-cell" v-if="checkable && checkboxPosition === 'left'">
+                        <th id="cb" v-if="checkable && checkboxPosition === 'left'">
                             <template v-if="headerCheckable">
                                 <wp-checkbox
                                     :value="isAllChecked"
@@ -214,7 +214,7 @@ import TableColumn from './wp-table-column'
 export default {
     name: 'wp-table',
     components: {
-        Checkbox,
+        'wp-checkbox': Checkbox,
         Pagination,
 		'wp-table-column': TableColumn,
 		'wp-spinner': Spinner,
@@ -825,3 +825,22 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+	.wp-list-table {
+		tr.is-selected {
+			background: #0073aa;
+			td {
+				color: #fff !important;
+			}
+		}
+
+		th#cb {
+			width: 1em;
+			input {
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+</style>
