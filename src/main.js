@@ -4,6 +4,13 @@ import WPSpinner from './components/wp-spinner'
 import WPNotice from './components/wp-spinner'
 import WPMetabox from './components/wp-metabox'
 import WPModal from './components/wp-modal'
+import WPContainer from './components/wp-container'
+import WPHeader from './components/wp-header'
+import WPFooter from './components/wp-footer'
+import WPMain from './components/wp-main'
+import WPAside from './components/wp-aside'
+import WPRow from './components/wp-row'
+import WPCol from './components/wp-col'
 
 import {
 	WPTabs,
@@ -20,6 +27,13 @@ const components = {
 	WPTabItem,
 	WPTabs,
 	WPModal,
+	WPContainer,
+	WPHeader,
+	WPFooter,
+	WPMain,
+	WPAside,
+	WPRow,
+	WPCol,
 }
 
 components.install = (Vue, options = {}) => {
