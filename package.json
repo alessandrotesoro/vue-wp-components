@@ -1,7 +1,7 @@
 {
   "name": "vue-wp-components",
   "description": "A Vue.js UI Toolkit that integrates with the WordPress dashboard to build admin pages. ",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "license": "MIT",
   "author": {
