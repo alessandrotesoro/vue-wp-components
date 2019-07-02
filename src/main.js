@@ -11,6 +11,7 @@ import WPMain from './components/wp-main'
 import WPAside from './components/wp-aside'
 import WPRow from './components/wp-row'
 import WPCol from './components/wp-col'
+import WPPagination from './components/wp-pagination'
 
 import {
 	WPTabs,
@@ -34,6 +35,7 @@ const components = {
 	WPAside,
 	WPRow,
 	WPCol,
+	WPPagination
 }
 
 components.install = (Vue, options = {}) => {
