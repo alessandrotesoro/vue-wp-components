@@ -835,6 +835,25 @@ export default {
 </script>
 
 <style lang="scss">
+@mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (min-width: 70em) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (min-width: 64em) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (min-width: 50em) { @content ; }
+  }
+   @else if $point == phablet {
+     @media (min-width: 37.5em)  { @content ; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 50em)  { @content ; }
+
+  }
+}
+
 	.wp-list-table {
 		tr.is-selected {
 			background: #0073aa;
@@ -861,5 +880,57 @@ export default {
 				cursor: pointer;
 			}
 		}
+
+		&.has-mobile-cards {
+            @include breakpoint(mobileonly) {
+				border:0;
+				background: none;
+                thead {
+                    display: none;
+                }
+                tfoot {
+                     th {
+                        border: 0; // Disable is-bordered
+                        display: inherit;
+                     }
+                }
+                tr {
+                    // Card style — Cannot extend inside media query
+                    box-shadow: 0 2px 3px rgba(#000, 0.1), 0 0 0 1px rgba(#000, 0.1);
+                    max-width: 100%;
+                    position: relative;
+                    display: block;
+					background: #fff;
+                    td {
+                        border: 0; // Disable is-bordered
+                        display: inherit;
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+                    }
+                    &:not(:last-child) {
+                        margin-bottom: 1rem;
+                    }
+
+                    &.detail {
+                        margin-top: -1rem;
+                    }
+                }
+                tr:not(.detail):not(.is-empty):not(.table-footer) {
+                    td {
+                        display: flex;
+                        width: auto;
+                        justify-content: end;
+                        text-align: right;
+                        border-bottom: 1px solid #eee;
+                        &:before {
+                            content: attr(data-label);
+                            padding-right: 0.5em;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
 	}
 </style>
