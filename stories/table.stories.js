@@ -57,7 +57,7 @@ storiesOf('Table', module)
 		template:
 		`
 		<div style="padding:50px;">
-			<WPTable :data="data" :columns="columns"></WPTable>
+			<WPTable :data="data" :columns="columns" :loading="true"></WPTable>
 		</div>
 		`,
 	}))

@@ -58,7 +58,7 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody v-if="visibleData.length">
+                <tbody v-if="visibleData.length && ! loading">
                     <template v-for="(row, index) in visibleData">
                         <tr
                             :key="customRowKey ? row[customRowKey] : index"
@@ -153,6 +153,13 @@
                         />
                     </template>
                 </tbody>
+				<tbody v-else-if="loading">
+                    <tr class="is-empty">
+                        <td :colspan="columnCount" style="text-align:center">
+                            <wp-spinner></wp-spinner>
+                        </td>
+                    </tr>
+                </tbody>
                 <tbody v-else>
                     <tr class="is-empty">
                         <td :colspan="columnCount">
@@ -201,7 +208,7 @@ import { getValueByPath, indexOf } from '../../utils/helpers'
 
 import Checkbox from '../wp-checkbox/wp-checkbox'
 import Pagination from '../wp-pagination/wp-pagination'
-
+import Spinner from '../wp-spinner'
 import TableColumn from './wp-table-column'
 
 export default {
@@ -209,7 +216,8 @@ export default {
     components: {
         Checkbox,
         Pagination,
-        'wp-table-column': TableColumn,
+		'wp-table-column': TableColumn,
+		'wp-spinner': Spinner,
     },
     props: {
         data: {
