@@ -61,6 +61,7 @@ export default {
 
 	li {
 		margin-bottom: 0;
+		display: inline-block;
 	}
 
 	.title-links {
