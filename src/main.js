@@ -13,6 +13,7 @@ import WPRow from './components/wp-row'
 import WPCol from './components/wp-col'
 import WPPagination from './components/wp-pagination'
 import WPCheckbox from './components/wp-checkbox'
+import WPPageHeader from './components/wp-page-header'
 
 import {
 	WPTabs,
@@ -45,6 +46,7 @@ const components = {
 	WPTable,
 	WPTableColumn,
 	WPCheckbox,
+	WPPageHeader,
 }
 
 components.install = (Vue, options = {}) => {
