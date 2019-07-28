@@ -3,9 +3,9 @@
 		<wp-header height="auto" class="admin-title-area">
 			<wp-row :gutter="0" class="wrap">
 				<wp-col :span="16">
-					<h1>
+					<h3>
 						<slot></slot>
-					</h1>
+					</h3>
 					<ul class="title-links hidden-sm-and-down" v-if="links.length > 0">
 						<li v-for="(item, index) in links" :key="index">
 							<a :href="item.url" class="page-title-action" target="_blank">{{item.title}}</a>
@@ -51,7 +51,7 @@ export default {
 		margin:0;
 	}
 
-	h1 {
+	h1, h3 {
 		display: inline-block;
 		padding: 0;
 		font-size: 20px;
